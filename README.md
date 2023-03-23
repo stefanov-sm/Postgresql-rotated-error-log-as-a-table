@@ -2,7 +2,7 @@
 Access Postgresql rotated error log files as a single view  
 
 ### Setup steps:
-- **Enable error log rotation on a day-of week basis. Edit `postgresql.conf` file with the values below and restart the sevice**
+- **Enable error log rotation on a day-of-week basis. Edit `postgresql.conf` file with the values below and restart the sevice**
 ```
 #------------------------------------------------------------------------------
 # postgresql.conf extract, section REPORTING AND LOGGING
