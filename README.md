@@ -1,5 +1,5 @@
 # Postgresql rotated error log as a view
-Access Postgresql rotated error log files as a single view  
+Access Postgresql rotated error log files as a single view. This would allow to use the full power of SQL to examine the log.
 
 ### Setup steps:
 - **Enable error log rotation on a day-of-week basis. Edit `postgresql.conf` file with the values below and restart postgresql sevice**
