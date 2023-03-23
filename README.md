@@ -20,15 +20,12 @@ log_line_prefix = '%t '
 log_timezone = 'Europe/Sofia'  # Use your timezone here
 ```
 - **Attach error log files as foreign tables**
-```
--- Setup File foreign data wrapper if not already there
-
+```sql
+-- Setup file_fdw if not already there
 create extension file_fdw;
 create server file_server foreign data wrapper file_fdw;
-```
-```PLpgSQL
--- Create 7 foreign tables for MON - SUN log files
 
+-- Create 7 foreign tables for MON - SUN log files
 do language plpgsql
 $body$
 declare
