@@ -1,4 +1,4 @@
-# Postgresql-rotated-error-log-as-a-table
+# Postgresql rotated errorlog as a view
 Access Postgresql rotated error log files as a single view  
 
 ### Setup steps:
