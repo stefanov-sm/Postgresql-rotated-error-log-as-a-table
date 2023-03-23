@@ -1,6 +1,8 @@
 # Postgresql-rotated-error-log-as-a-table
 Access Postgresql rotated error log files as a single view  
-- Enable error log rotation on a day-of week basis. Edit `postgresql.conf` file with the values below and restart the sevice
+
+### Setup steps:
+- **Enable error log rotation on a day-of week basis. Edit `postgresql.conf` file with the values below and restart the sevice**
 ```
 #------------------------------------------------------------------------------
 # postgresql.conf extract, section REPORTING AND LOGGING
@@ -17,7 +19,7 @@ log_rotation_size = 0
 log_line_prefix = '%t '
 log_timezone = 'Europe/Sofia'  # Use your timezone here
 ```
-- Attach error log files as foreign tables
+- **Attach error log files as foreign tables**
 ```sql
 -- Setup File foreign data wrapper if not already there
 
@@ -74,7 +76,7 @@ begin
 end;
 $body$;
 ```
-- Create the `error_log` view
+- **Create the `error_log` view**
 ```sql
 
 CREATE VIEW error_log AS
@@ -103,3 +105,6 @@ SELECT
 FROM t
 ORDER BY "Log time" DESC;
 ```
+### Important notes
+- **Replace `/path/to/` with the actual log files' location in `postgresql.conf` and the dynamic DDL template**
+- **Fields `ignored_a text`, `ignored_b text` and `ignored_c text` in the DDL template are PG 14 version specific. PG 9.5 has none.**
