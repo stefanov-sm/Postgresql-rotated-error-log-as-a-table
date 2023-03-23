@@ -106,3 +106,13 @@ ORDER BY "Log time" DESC;
 - Replace `/path/to/` with the actual log files' location in `postgresql.conf` and the dynamic DDL template;
 - You need to create 7 empty files `postgreslog.Mon.csv` - `postgreslog.Sun.csv` in the actual log files' location;
 - Fields `ignored_a text`, `ignored_b text` and `ignored_c text` in the DDL template are PG 14 version specific. PG 9.5 has none. Newer versions may have more.
+
+### Demo
+```sql
+select * from anywhere;
+select "Severity", "Client", "Log time", "Application", "Log message", "Query" from error_log;
+```
+|Severity|Client|Log time|Application|Log message|Query|
+|--------|------|--------|-----------|-----------|-----|
+ERROR|127.0.0.1|2023-03-23 13:07:54.0|DBeaver 23.0.0 - SQLEditor <Script.sql>|relation "anywhere" does not exist|select * from anywhere|
+LOG||2023-03-23 13:07:18.0||database system is ready to accept connections||
