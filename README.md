@@ -114,5 +114,5 @@ select "Severity", "Client", "Log time", "Application", "Log message", "Query" f
 ```
 |Severity|Client|Log time|Application|Log message|Query|
 |--------|------|--------|-----------|-----------|-----|
-ERROR|127.0.0.1|2023-03-23 13:07:54.0|DBeaver 23.0.0 - SQLEditor <Script.sql>|relation "anywhere" does not exist|select * from anywhere|
-LOG||2023-03-23 13:07:18.0||database system is ready to accept connections||
+ERROR|127.0.0.1|2023-03-23 13:07:54|DBeaver 23.0.0 - SQLEditor <Script.sql>|relation "anywhere" does not exist|select * from anywhere|
+LOG||2023-03-23 13:07:18||database system is ready to accept connections||
