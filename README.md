@@ -104,4 +104,5 @@ ORDER BY "Log time" DESC;
 ```
 ### Important notes
 - Replace `/path/to/` with the actual log files' location in `postgresql.conf` and the dynamic DDL template;
+- You need to create 7 empty files `postgreslog.Mon.csv` - `postgreslog.Sun.csv` in the actual log files' location;
 - Fields `ignored_a text`, `ignored_b text` and `ignored_c text` in the DDL template are PG 14 version specific. PG 9.5 has none. Newer versions may have more.
