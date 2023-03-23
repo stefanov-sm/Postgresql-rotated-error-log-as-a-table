@@ -107,10 +107,13 @@ ORDER BY "Log time" DESC;
 - Create 7 empty files `postgreslog.Mon.csv` - `postgreslog.Sun.csv` in the actual log files' location;
 - Fields `ignored_a text`, `ignored_b text` and `ignored_c text` in the DDL template are PG 14 version specific. PG 9.5 has none. Newer versions may have more.
 
-### Demo
+### Demo. See the log entries of the last minute
 ```sql
 select * from anywhere;
-select "Severity", "Client", "Log time", "Application", "Log message", "Query" from error_log;
+
+select "Severity", "Client", "Log time", "Application", "Log message", "Query"
+  from error_log
+ where "Log time" > current_timestamp - interval '1 minute';
 ```
 |Severity|Client|Log time|Application|Log message|Query|
 |--------|------|--------|-----------|-----------|-----|
