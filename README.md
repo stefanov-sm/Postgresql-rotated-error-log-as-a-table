@@ -2,7 +2,7 @@
 Access Postgresql rotated error log files as a single view  
 
 ### Setup steps:
-- **Enable error log rotation on a day-of week basis. Edit `postgresql.conf` file with the values below and restart the sevice**
+- **Enable error log rotation on a day-of week basis. Edit `postgresql.conf` file with the values below and restart the sevice.**
 ```
 #------------------------------------------------------------------------------
 # postgresql.conf extract, section REPORTING AND LOGGING
@@ -106,5 +106,5 @@ FROM t
 ORDER BY "Log time" DESC;
 ```
 ### Important notes
-- **Replace `/path/to/` with the actual log files' location in `postgresql.conf` and the dynamic DDL template**
-- **Fields `ignored_a text`, `ignored_b text` and `ignored_c text` in the DDL template are PG 14 version specific. PG 9.5 has none. Newer versions may have more.**
+- Replace `/path/to/` with the actual log files' location in `postgresql.conf` and the dynamic DDL template;
+- Fields `ignored_a text`, `ignored_b text` and `ignored_c text` in the DDL template are PG 14 version specific. PG 9.5 has none. Newer versions may have more.
